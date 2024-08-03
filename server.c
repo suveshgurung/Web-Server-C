@@ -1,3 +1,4 @@
+#include <asm-generic/socket.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -37,7 +38,7 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    char* buffer;
+    char buffer[1024];
     ssize_t valRead = read(server_fd, buffer, 1024 - 1);
 
     printf("%s\n", buffer);
